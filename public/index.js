@@ -151,3 +151,13 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
+
+// 3 seconds after page load, fetch API data
+// so that service worker will cache it without user having to refresh page
+window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    fetch("/api/transaction").then(response => {
+      return response.json();
+    });
+  }, 3000);
+});
