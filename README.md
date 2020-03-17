@@ -6,7 +6,7 @@ An online/offline PWA that tracks account balance, withdrawals, and deposits
 
 ✔ Create an app manifest.
 
-Register and install a service worker.
+✔ Register and install a service worker.
 
 Cache your files and deliver and offline experience.
 
