@@ -1,13 +1,15 @@
 let transactions = [];
 let myChart;
 
-fetch("/api/transaction")
+fetch("/api/transaction/all")
   .then(response => {
     return response.json();
   })
   .then(data => {
     // save db data on global variable
     transactions = data;
+
+    console.log(transactions);
 
     populateTotal();
     populateTable();
@@ -156,7 +158,7 @@ document.querySelector("#sub-btn").onclick = function() {
 // so that service worker will cache it without user having to refresh page
 window.addEventListener("load", () => {
   window.setTimeout(() => {
-    fetch("/api/transaction").then(response => {
+    fetch("/api/transaction/all").then(response => {
       return response.json();
     });
   }, 3000);
