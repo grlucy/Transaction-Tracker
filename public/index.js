@@ -125,6 +125,10 @@ function sendTransaction(isAdding) {
     }
   })
     .then(response => {
+      // Update cache by fetching all transactions, including the one just posted
+      fetch("/api/transaction/all");
+
+      // HTTP response for post route
       return response.json();
     })
     .then(data => {
