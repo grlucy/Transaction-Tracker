@@ -9,8 +9,6 @@ fetch("/api/transaction/all")
     // save db data on global variable
     transactions = data;
 
-    console.log(transactions);
-
     populateTotal();
     populateTable();
     populateChart();
